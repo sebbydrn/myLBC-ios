@@ -15,6 +15,16 @@
 		487CAAF32621E27A008A971D /* myLBC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 487CAAF12621E27A008A971D /* myLBC.xcdatamodeld */; };
 		487CAAFE2621E27B008A971D /* myLBCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAAFD2621E27B008A971D /* myLBCTests.swift */; };
 		487CAB092621E27B008A971D /* myLBCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB082621E27B008A971D /* myLBCUITests.swift */; };
+		487CAB1A262AEC5D008A971D /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB19262AEC5D008A971D /* Login.swift */; };
+		487CAB23262AF373008A971D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB22262AF373008A971D /* CustomTextField.swift */; };
+		487CAB28262B2C4A008A971D /* RememberMeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB27262B2C4A008A971D /* RememberMeField.swift */; };
+		487CAB2D262B2FA5008A971D /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB2C262B2FA5008A971D /* ForgotPassword.swift */; };
+		487CAB32262B353C008A971D /* ForgotPasswordSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB31262B353C008A971D /* ForgotPasswordSheet.swift */; };
+		487CAB37262B36D9008A971D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB36262B36D9008A971D /* CustomButton.swift */; };
+		487CAB3C262BB224008A971D /* RegisterForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB3B262BB224008A971D /* RegisterForm.swift */; };
+		487CAB47262C43ED008A971D /* CustomTextFieldReg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB46262C43ED008A971D /* CustomTextFieldReg.swift */; };
+		487CAB53262D1C83008A971D /* RegisterForm2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB52262D1C83008A971D /* RegisterForm2.swift */; };
+		487CAB5E262D2D3C008A971D /* RegisterForm3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB5D262D2D3C008A971D /* RegisterForm3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,16 @@
 		487CAB042621E27B008A971D /* myLBCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myLBCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		487CAB082621E27B008A971D /* myLBCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myLBCUITests.swift; sourceTree = "<group>"; };
 		487CAB0A2621E27B008A971D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		487CAB19262AEC5D008A971D /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		487CAB22262AF373008A971D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		487CAB27262B2C4A008A971D /* RememberMeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RememberMeField.swift; sourceTree = "<group>"; };
+		487CAB2C262B2FA5008A971D /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		487CAB31262B353C008A971D /* ForgotPasswordSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordSheet.swift; sourceTree = "<group>"; };
+		487CAB36262B36D9008A971D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		487CAB3B262BB224008A971D /* RegisterForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterForm.swift; sourceTree = "<group>"; };
+		487CAB46262C43ED008A971D /* CustomTextFieldReg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldReg.swift; sourceTree = "<group>"; };
+		487CAB52262D1C83008A971D /* RegisterForm2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterForm2.swift; sourceTree = "<group>"; };
+		487CAB5D262D2D3C008A971D /* RegisterForm3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterForm3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +119,7 @@
 		487CAAE52621E279008A971D /* myLBC */ = {
 			isa = PBXGroup;
 			children = (
+				487CAB1E262AEC66008A971D /* View */,
 				487CAAE62621E279008A971D /* myLBCApp.swift */,
 				487CAAE82621E279008A971D /* ContentView.swift */,
 				487CAAEA2621E27A008A971D /* Assets.xcassets */,
@@ -134,6 +155,31 @@
 				487CAB0A2621E27B008A971D /* Info.plist */,
 			);
 			path = myLBCUITests;
+			sourceTree = "<group>";
+		};
+		487CAB1E262AEC66008A971D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				487CAB51262D1C6A008A971D /* RegisterForms */,
+				487CAB19262AEC5D008A971D /* Login.swift */,
+				487CAB22262AF373008A971D /* CustomTextField.swift */,
+				487CAB27262B2C4A008A971D /* RememberMeField.swift */,
+				487CAB2C262B2FA5008A971D /* ForgotPassword.swift */,
+				487CAB31262B353C008A971D /* ForgotPasswordSheet.swift */,
+				487CAB36262B36D9008A971D /* CustomButton.swift */,
+				487CAB46262C43ED008A971D /* CustomTextFieldReg.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		487CAB51262D1C6A008A971D /* RegisterForms */ = {
+			isa = PBXGroup;
+			children = (
+				487CAB3B262BB224008A971D /* RegisterForm.swift */,
+				487CAB52262D1C83008A971D /* RegisterForm2.swift */,
+				487CAB5D262D2D3C008A971D /* RegisterForm3.swift */,
+			);
+			path = RegisterForms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +312,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				487CAAF02621E27A008A971D /* Persistence.swift in Sources */,
+				487CAB1A262AEC5D008A971D /* Login.swift in Sources */,
+				487CAB47262C43ED008A971D /* CustomTextFieldReg.swift in Sources */,
+				487CAB23262AF373008A971D /* CustomTextField.swift in Sources */,
+				487CAB2D262B2FA5008A971D /* ForgotPassword.swift in Sources */,
+				487CAB37262B36D9008A971D /* CustomButton.swift in Sources */,
 				487CAAF32621E27A008A971D /* myLBC.xcdatamodeld in Sources */,
+				487CAB3C262BB224008A971D /* RegisterForm.swift in Sources */,
+				487CAB5E262D2D3C008A971D /* RegisterForm3.swift in Sources */,
+				487CAB32262B353C008A971D /* ForgotPasswordSheet.swift in Sources */,
+				487CAB53262D1C83008A971D /* RegisterForm2.swift in Sources */,
+				487CAB28262B2C4A008A971D /* RememberMeField.swift in Sources */,
 				487CAAE92621E279008A971D /* ContentView.swift in Sources */,
 				487CAAE72621E279008A971D /* myLBCApp.swift in Sources */,
 			);
@@ -430,7 +486,7 @@
 				DEVELOPMENT_TEAM = 35K3246AK4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = myLBC/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -438,7 +494,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.myLBC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -452,7 +508,7 @@
 				DEVELOPMENT_TEAM = 35K3246AK4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = myLBC/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,7 +516,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.myLBC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
