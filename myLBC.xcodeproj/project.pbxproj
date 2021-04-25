@@ -25,6 +25,25 @@
 		487CAB47262C43ED008A971D /* CustomTextFieldReg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB46262C43ED008A971D /* CustomTextFieldReg.swift */; };
 		487CAB53262D1C83008A971D /* RegisterForm2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB52262D1C83008A971D /* RegisterForm2.swift */; };
 		487CAB5E262D2D3C008A971D /* RegisterForm3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB5D262D2D3C008A971D /* RegisterForm3.swift */; };
+		487CAB6D262E6700008A971D /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB6C262E6700008A971D /* Home.swift */; };
+		487CAB75262E6873008A971D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB74262E6873008A971D /* MenuView.swift */; };
+		487CAB7A2633DFBE008A971D /* ComingSoonSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB792633DFBE008A971D /* ComingSoonSheet.swift */; };
+		487CAB7F2633FECD008A971D /* TransactionHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB7E2633FECD008A971D /* TransactionHistory.swift */; };
+		487CAB85263402DC008A971D /* PendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB84263402DC008A971D /* PendingView.swift */; };
+		487CAB8A263402E5008A971D /* CompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB89263402E5008A971D /* CompletedView.swift */; };
+		487CAB8F26340B79008A971D /* TransactionDetailSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB8E26340B79008A971D /* TransactionDetailSheet.swift */; };
+		487CAB942634132B008A971D /* CashOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB932634132B008A971D /* CashOut.swift */; };
+		487CAB9926341F76008A971D /* BranchCollect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB9826341F75008A971D /* BranchCollect.swift */; };
+		487CAB9E263449DF008A971D /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAB9D263449DF008A971D /* Transfer.swift */; };
+		487CABA3263450AF008A971D /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CABA2263450AF008A971D /* BankAccount.swift */; };
+		487CABA8263454B1008A971D /* SavedAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CABA7263454B1008A971D /* SavedAccounts.swift */; };
+		487CABAD263479ED008A971D /* CustomTextFieldTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CABAC263479ED008A971D /* CustomTextFieldTransfer.swift */; };
+		488F5237263485F00031DEEE /* BankAccount2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488F5236263485F00031DEEE /* BankAccount2.swift */; };
+		488F523C263595A30031DEEE /* TrackTrace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488F523B263595A30031DEEE /* TrackTrace.swift */; };
+		488F524126359C890031DEEE /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488F524026359C890031DEEE /* Profile.swift */; };
+		488F524E2635A5CA0031DEEE /* EnterPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488F524D2635A5CA0031DEEE /* EnterPin.swift */; };
+		488F52532635A79E0031DEEE /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488F52522635A79E0031DEEE /* Security.swift */; };
+		488F525B2635B56D0031DEEE /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488F525A2635B56D0031DEEE /* ChangePassword.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +88,25 @@
 		487CAB46262C43ED008A971D /* CustomTextFieldReg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldReg.swift; sourceTree = "<group>"; };
 		487CAB52262D1C83008A971D /* RegisterForm2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterForm2.swift; sourceTree = "<group>"; };
 		487CAB5D262D2D3C008A971D /* RegisterForm3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterForm3.swift; sourceTree = "<group>"; };
+		487CAB6C262E6700008A971D /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		487CAB74262E6873008A971D /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		487CAB792633DFBE008A971D /* ComingSoonSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonSheet.swift; sourceTree = "<group>"; };
+		487CAB7E2633FECD008A971D /* TransactionHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistory.swift; sourceTree = "<group>"; };
+		487CAB84263402DC008A971D /* PendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingView.swift; sourceTree = "<group>"; };
+		487CAB89263402E5008A971D /* CompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedView.swift; sourceTree = "<group>"; };
+		487CAB8E26340B79008A971D /* TransactionDetailSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailSheet.swift; sourceTree = "<group>"; };
+		487CAB932634132B008A971D /* CashOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashOut.swift; sourceTree = "<group>"; };
+		487CAB9826341F75008A971D /* BranchCollect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchCollect.swift; sourceTree = "<group>"; };
+		487CAB9D263449DF008A971D /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
+		487CABA2263450AF008A971D /* BankAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
+		487CABA7263454B1008A971D /* SavedAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedAccounts.swift; sourceTree = "<group>"; };
+		487CABAC263479ED008A971D /* CustomTextFieldTransfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldTransfer.swift; sourceTree = "<group>"; };
+		488F5236263485F00031DEEE /* BankAccount2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccount2.swift; sourceTree = "<group>"; };
+		488F523B263595A30031DEEE /* TrackTrace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTrace.swift; sourceTree = "<group>"; };
+		488F524026359C890031DEEE /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		488F524D2635A5CA0031DEEE /* EnterPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPin.swift; sourceTree = "<group>"; };
+		488F52522635A79E0031DEEE /* Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Security.swift; sourceTree = "<group>"; };
+		488F525A2635B56D0031DEEE /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +198,9 @@
 		487CAB1E262AEC66008A971D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				488F5235263485D70031DEEE /* BankAccount */,
+				487CAB83263402CB008A971D /* Transactions */,
+				487CAB6B262E66CA008A971D /* Main */,
 				487CAB51262D1C6A008A971D /* RegisterForms */,
 				487CAB19262AEC5D008A971D /* Login.swift */,
 				487CAB22262AF373008A971D /* CustomTextField.swift */,
@@ -168,6 +209,17 @@
 				487CAB31262B353C008A971D /* ForgotPasswordSheet.swift */,
 				487CAB36262B36D9008A971D /* CustomButton.swift */,
 				487CAB46262C43ED008A971D /* CustomTextFieldReg.swift */,
+				487CAB792633DFBE008A971D /* ComingSoonSheet.swift */,
+				487CAB932634132B008A971D /* CashOut.swift */,
+				487CAB9826341F75008A971D /* BranchCollect.swift */,
+				487CAB9D263449DF008A971D /* Transfer.swift */,
+				487CABA7263454B1008A971D /* SavedAccounts.swift */,
+				487CABAC263479ED008A971D /* CustomTextFieldTransfer.swift */,
+				488F523B263595A30031DEEE /* TrackTrace.swift */,
+				488F524026359C890031DEEE /* Profile.swift */,
+				488F524D2635A5CA0031DEEE /* EnterPin.swift */,
+				488F52522635A79E0031DEEE /* Security.swift */,
+				488F525A2635B56D0031DEEE /* ChangePassword.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,6 +232,35 @@
 				487CAB5D262D2D3C008A971D /* RegisterForm3.swift */,
 			);
 			path = RegisterForms;
+			sourceTree = "<group>";
+		};
+		487CAB6B262E66CA008A971D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				487CAB6C262E6700008A971D /* Home.swift */,
+				487CAB74262E6873008A971D /* MenuView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		487CAB83263402CB008A971D /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				487CAB7E2633FECD008A971D /* TransactionHistory.swift */,
+				487CAB84263402DC008A971D /* PendingView.swift */,
+				487CAB89263402E5008A971D /* CompletedView.swift */,
+				487CAB8E26340B79008A971D /* TransactionDetailSheet.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		488F5235263485D70031DEEE /* BankAccount */ = {
+			isa = PBXGroup;
+			children = (
+				487CABA2263450AF008A971D /* BankAccount.swift */,
+				488F5236263485F00031DEEE /* BankAccount2.swift */,
+			);
+			path = BankAccount;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,20 +392,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				487CAB8F26340B79008A971D /* TransactionDetailSheet.swift in Sources */,
+				488F524126359C890031DEEE /* Profile.swift in Sources */,
 				487CAAF02621E27A008A971D /* Persistence.swift in Sources */,
+				487CAB85263402DC008A971D /* PendingView.swift in Sources */,
+				487CAB942634132B008A971D /* CashOut.swift in Sources */,
 				487CAB1A262AEC5D008A971D /* Login.swift in Sources */,
+				487CABA8263454B1008A971D /* SavedAccounts.swift in Sources */,
 				487CAB47262C43ED008A971D /* CustomTextFieldReg.swift in Sources */,
 				487CAB23262AF373008A971D /* CustomTextField.swift in Sources */,
+				488F5237263485F00031DEEE /* BankAccount2.swift in Sources */,
+				487CAB9926341F76008A971D /* BranchCollect.swift in Sources */,
 				487CAB2D262B2FA5008A971D /* ForgotPassword.swift in Sources */,
+				488F524E2635A5CA0031DEEE /* EnterPin.swift in Sources */,
+				487CAB7F2633FECD008A971D /* TransactionHistory.swift in Sources */,
 				487CAB37262B36D9008A971D /* CustomButton.swift in Sources */,
 				487CAAF32621E27A008A971D /* myLBC.xcdatamodeld in Sources */,
+				487CABA3263450AF008A971D /* BankAccount.swift in Sources */,
+				487CAB6D262E6700008A971D /* Home.swift in Sources */,
+				487CAB8A263402E5008A971D /* CompletedView.swift in Sources */,
+				488F525B2635B56D0031DEEE /* ChangePassword.swift in Sources */,
+				487CABAD263479ED008A971D /* CustomTextFieldTransfer.swift in Sources */,
+				488F523C263595A30031DEEE /* TrackTrace.swift in Sources */,
 				487CAB3C262BB224008A971D /* RegisterForm.swift in Sources */,
+				487CAB75262E6873008A971D /* MenuView.swift in Sources */,
 				487CAB5E262D2D3C008A971D /* RegisterForm3.swift in Sources */,
 				487CAB32262B353C008A971D /* ForgotPasswordSheet.swift in Sources */,
 				487CAB53262D1C83008A971D /* RegisterForm2.swift in Sources */,
+				488F52532635A79E0031DEEE /* Security.swift in Sources */,
 				487CAB28262B2C4A008A971D /* RememberMeField.swift in Sources */,
 				487CAAE92621E279008A971D /* ContentView.swift in Sources */,
 				487CAAE72621E279008A971D /* myLBCApp.swift in Sources */,
+				487CAB9E263449DF008A971D /* Transfer.swift in Sources */,
+				487CAB7A2633DFBE008A971D /* ComingSoonSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

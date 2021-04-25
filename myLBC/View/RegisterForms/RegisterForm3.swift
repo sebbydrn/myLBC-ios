@@ -72,7 +72,7 @@ struct RegisterForm3: View {
                 .padding(.bottom, 10)
             
         }
-        .navigationTitle(Text("Sign Up"))
+        .navigationBarTitle("Sign Up", displayMode: .large)
         
         VStack(alignment: .center) {
             CustomButton(action: "", title: "SUBMIT")

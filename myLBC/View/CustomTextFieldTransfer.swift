@@ -1,13 +1,13 @@
 //
-//  CustomTextField.swift
+//  CustomTextFieldTransfer.swift
 //  myLBC
 //
-//  Created by Lemuel Sebastien S. Doronio on 4/17/21.
+//  Created by Lemuel Sebastien S. Doronio on 4/25/21.
 //
 
 import SwiftUI
 
-struct CustomTextField: View {
+struct CustomTextFieldTransfer: View {
     
     // Fields...
     var image: String
@@ -52,7 +52,7 @@ struct CustomTextField: View {
                             
                         }
                         
-                        if title == "Password" || title == "PIN" || title == "Current Password" || title == "New Password" || title == "Re-type New Password" {
+                        if title == "Password" {
                             
                             HStack {
                                 
@@ -109,12 +109,10 @@ struct CustomTextField: View {
             
             
         }
-        .padding(.horizontal)
         .padding(.vertical, 10)
         .background(Color("txt").opacity(value != "" ? 1 : 0))
         .background(Color.white)
         .border(value != "" ? Color("crimson") : Color.gray, width: 2)
-        .padding(.horizontal)
         .padding(.top)
         .animation(.linear)
     }

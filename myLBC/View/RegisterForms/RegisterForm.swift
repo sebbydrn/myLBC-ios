@@ -115,7 +115,7 @@ struct RegisterForm: View {
             .padding(.bottom, 10)
             
         }
-        .navigationTitle(Text("Sign Up"))
+        .navigationBarTitle("Sign Up", displayMode: .large)
         
         VStack(alignment: .center) {
             NavigationLink(destination: RegisterForm2()) {

@@ -10,6 +10,8 @@ import SwiftUI
 struct Login: View {
     @State var username = ""
     @State var password = ""
+    @State var isLinkActive = false
+    
     @Namespace var animation
     
     var body: some View {
@@ -36,8 +38,25 @@ struct Login: View {
             .padding(.top, 10)
             .padding(.horizontal)
             
-            CustomButton(action: "", title: "LOGIN")
-                .padding(.top, 20)
+            NavigationLink(destination: Home(), isActive: $isLinkActive) {
+                Button(action: {
+                    self.isLinkActive = true
+                }) {
+                    Text("LOGIN")
+                        .foregroundColor(Color.white)
+                }
+                .padding(.leading, 20)
+                .padding(.trailing, 20)
+                .padding(.top, 10)
+                .padding(.bottom, 10)
+                .background(Color("crimson"))
+                .cornerRadius(8)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color("crimson"), lineWidth: 2)
+                )
+            }
+            .padding(.top, 20)
             
             
             HStack {
@@ -54,6 +73,6 @@ struct Login: View {
             }
             
         }
-        
+        .navigationBarHidden(true)
     }
 }
