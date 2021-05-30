@@ -65,6 +65,121 @@ struct CompletedRow: View {
 }
 
 struct CompletedView: View {
+    var db: DBHelper = DBHelper()
+    var userAccount: [UserTable] = []
+    
+    init() {
+        let userCount = db.countUsers()
+        userAccount = db.readUser(id: userCount)
+        getCompletedTransactions()
+    }
+    
+    func getCompletedTransactions() {
+        let userToken = userAccount[0].token
+        
+        print(userToken)
+        
+        guard let url = URL(string: "http://ec2-54-251-121-234.ap-southeast-1.compute.amazonaws.com:3000/lbcapi/ss/getTransactions") else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(userToken)", forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data else { return }
+            
+            let finalData = try? JSONDecoder().decode(TransactionMessage.self, from: data)
+            
+            print(finalData)
+            
+            if finalData?.message == "Transactions have been retrieved" {
+                DispatchQueue.main.async {
+                    
+                }
+            } else {
+                print("Cannot retrieve transactions")
+            }
+        }.resume()
+    }
+    
+    struct TransactionMessage: Codable {
+        let id: String
+        let message: String
+        let result: TransactionResult
+    }
+
+    struct TransactionResult: Codable {
+        let responseCode: Int
+        var postedTrx: [postedTrxData] = []
+        var pendingTrx: [pendingTrxData] = []
+    }
+    
+    struct postedTrxData: Codable {
+        let trx_id: Int
+        let wallet_id: Int
+        let trx_type_id: Int
+//        let amount: String
+//        let freight: String
+//        let cod_fee: String
+//        let rts: String
+//        let other_fees: String
+//        let net_amt: String
+//        let service_fee: String
+//        let trx_ref: String
+//        let trx_ref_ext: String
+//        let notes: String
+//        let sender_id: Int
+//        let receiver_id: Int
+//        let receiver_wallet: Int
+//        let trx_date: String
+//        let date_posted: String
+//        let status: Int
+//        let branch_name: String
+//        let branch_code: String
+//        let date: String
+//        let trxType: String
+//        let trxTypeCode: String
+//        let gross: String
+//        let netAmt: String
+//        let balance: String
+//        let statusDesc: String
+//        let trxRef: String
+    }
+    
+    struct pendingTrxData: Codable {
+        let trx_id: Int
+        let wallet_id: Int
+        let trx_type_id: Int
+//        let amount: String
+//        let freight: String
+//        let cod_fee: String
+//        let rts: String
+//        let other_fees: String
+//        let net_amt: String
+//        let service_fee: String
+//        let trx_ref: String
+//        let trx_ref_ext: String
+//        let notes: String
+//        let sender_id: Int
+//        let receiver_id: Int
+//        let receiver_wallet: Int
+//        let trx_date: String
+//        let date_posted: String
+//        let status: Int
+//        let branch_name: String
+//        let branch_code: String
+//        let date: String
+//        let trxType: String
+//        let trxTypeCode: String
+//        let gross: String
+//        let netAmt: String
+//        let balance: String
+//        let statusDesc: String
+//        let trxRef: String
+    }
+    
     var body: some View {
         
         let completedData = [

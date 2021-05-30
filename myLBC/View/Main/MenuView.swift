@@ -9,6 +9,13 @@ import SwiftUI
 
 struct MenuView: View {
     
+    var db: DBHelper = DBHelper()
+    var userAccount: [UserTable] = []
+    
+    init() {
+        userAccount = db.readUser(id: 3)
+    }
+    
     var body: some View {
         
         VStack(alignment: .leading) {
@@ -25,9 +32,15 @@ struct MenuView: View {
                 .padding(.top, 150)
                 
                 HStack {
-                    Text("Lemuel Doronio")
-                        .foregroundColor(Color.white)
-                        .font(.title)
+//                    Text(userAccount[0].fname)
+//                        .foregroundColor(Color.white)
+//                        .font(.title)
+//                    +
+//                    Text(" ")
+//                    +
+//                        Text(userAccount[0].lname)
+//                        .foregroundColor(Color.white)
+//                        .font(.title)
                     
                     Spacer()
                 }

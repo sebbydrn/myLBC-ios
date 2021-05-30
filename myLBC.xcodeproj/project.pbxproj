@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		482609D9265D150100DE452E /* UserTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482609D8265D150100DE452E /* UserTable.swift */; };
+		482609E5265D15F900DE452E /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482609E4265D15F900DE452E /* DBHelper.swift */; };
+		482609F0265D610000DE452E /* ProvincesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482609EF265D610000DE452E /* ProvincesTable.swift */; };
 		487CAAE72621E279008A971D /* myLBCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAAE62621E279008A971D /* myLBCApp.swift */; };
 		487CAAE92621E279008A971D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAAE82621E279008A971D /* ContentView.swift */; };
 		487CAAEB2621E27A008A971D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487CAAEA2621E27A008A971D /* Assets.xcassets */; };
@@ -44,6 +47,7 @@
 		488F524E2635A5CA0031DEEE /* EnterPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488F524D2635A5CA0031DEEE /* EnterPin.swift */; };
 		488F52532635A79E0031DEEE /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488F52522635A79E0031DEEE /* Security.swift */; };
 		488F525B2635B56D0031DEEE /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488F525A2635B56D0031DEEE /* ChangePassword.swift */; };
+		488F5264265A645E0031DEEE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488F5263265A645E0031DEEE /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		482609D8265D150100DE452E /* UserTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTable.swift; sourceTree = "<group>"; };
+		482609E4265D15F900DE452E /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		482609EF265D610000DE452E /* ProvincesTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvincesTable.swift; sourceTree = "<group>"; };
 		487CAAE32621E279008A971D /* myLBC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myLBC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		487CAAE62621E279008A971D /* myLBCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myLBCApp.swift; sourceTree = "<group>"; };
 		487CAAE82621E279008A971D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +114,7 @@
 		488F524D2635A5CA0031DEEE /* EnterPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPin.swift; sourceTree = "<group>"; };
 		488F52522635A79E0031DEEE /* Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Security.swift; sourceTree = "<group>"; };
 		488F525A2635B56D0031DEEE /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
+		488F5263265A645E0031DEEE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +142,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		482609D7265D14EB00DE452E /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				482609D8265D150100DE452E /* UserTable.swift */,
+				482609EF265D610000DE452E /* ProvincesTable.swift */,
+			);
+			path = Tables;
+			sourceTree = "<group>";
+		};
+		482609E3265D15DF00DE452E /* DatabaseHelper */ = {
+			isa = PBXGroup;
+			children = (
+				482609E4265D15F900DE452E /* DBHelper.swift */,
+			);
+			path = DatabaseHelper;
+			sourceTree = "<group>";
+		};
 		487CAADA2621E279008A971D = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +182,9 @@
 		487CAAE52621E279008A971D /* myLBC */ = {
 			isa = PBXGroup;
 			children = (
+				482609E3265D15DF00DE452E /* DatabaseHelper */,
+				482609D7265D14EB00DE452E /* Tables */,
+				488F5262265A64470031DEEE /* Managers */,
 				487CAB1E262AEC66008A971D /* View */,
 				487CAAE62621E279008A971D /* myLBCApp.swift */,
 				487CAAE82621E279008A971D /* ContentView.swift */,
@@ -261,6 +289,14 @@
 				488F5236263485F00031DEEE /* BankAccount2.swift */,
 			);
 			path = BankAccount;
+			sourceTree = "<group>";
+		};
+		488F5262265A64470031DEEE /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				488F5263265A645E0031DEEE /* CoreDataManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +432,7 @@
 				488F524126359C890031DEEE /* Profile.swift in Sources */,
 				487CAAF02621E27A008A971D /* Persistence.swift in Sources */,
 				487CAB85263402DC008A971D /* PendingView.swift in Sources */,
+				488F5264265A645E0031DEEE /* CoreDataManager.swift in Sources */,
 				487CAB942634132B008A971D /* CashOut.swift in Sources */,
 				487CAB1A262AEC5D008A971D /* Login.swift in Sources */,
 				487CABA8263454B1008A971D /* SavedAccounts.swift in Sources */,
@@ -404,6 +441,7 @@
 				488F5237263485F00031DEEE /* BankAccount2.swift in Sources */,
 				487CAB9926341F76008A971D /* BranchCollect.swift in Sources */,
 				487CAB2D262B2FA5008A971D /* ForgotPassword.swift in Sources */,
+				482609D9265D150100DE452E /* UserTable.swift in Sources */,
 				488F524E2635A5CA0031DEEE /* EnterPin.swift in Sources */,
 				487CAB7F2633FECD008A971D /* TransactionHistory.swift in Sources */,
 				487CAB37262B36D9008A971D /* CustomButton.swift in Sources */,
@@ -424,6 +462,8 @@
 				487CAAE92621E279008A971D /* ContentView.swift in Sources */,
 				487CAAE72621E279008A971D /* myLBCApp.swift in Sources */,
 				487CAB9E263449DF008A971D /* Transfer.swift in Sources */,
+				482609F0265D610000DE452E /* ProvincesTable.swift in Sources */,
+				482609E5265D15F900DE452E /* DBHelper.swift in Sources */,
 				487CAB7A2633DFBE008A971D /* ComingSoonSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +535,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 35K3246AK4;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -556,6 +597,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 35K3246AK4;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

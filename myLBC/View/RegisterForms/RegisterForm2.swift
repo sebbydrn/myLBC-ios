@@ -20,8 +20,8 @@ struct RegisterForm2: View {
     @State private var provinceIndex = 0
     @State private var municipalityIndex = 0
     
-    var provinces = ["Nueva Ecija"]
-    var municipalities = ["Cabanatuan City", "Science City of Munoz", "Talavera", "San Jose City"]
+    var provinces = ["Select", "Nueva Ecija"]
+    @State var municipalities = ["Cabanatuan City", "Science City of Munoz", "Talavera", "San Jose City"]
     
     @Namespace var animation
     
@@ -64,6 +64,10 @@ struct RegisterForm2: View {
             .border(Color.gray, width: 2)
             .padding(.top)
             .animation(.linear)
+            .onChange(of: provinceIndex, perform: { value in
+                print("Province tag: \(value)")
+//                municipalities = ["Test1", "test2"]
+            })
             
             // Municipality field here
             Picker(selection: $municipalityIndex, label: Text("Municipality")) {
