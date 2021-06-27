@@ -10,38 +10,42 @@ import SwiftUI
 struct CashOut: View {
     @State private var toggleComingSoon = false
     
+    @StateObject var balance = balanceAPI()
     
     var body: some View {
         
         VStack(alignment: .leading) {
             
             VStack {
-                
+
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/) {
-                    
+
                     Text("myBalance")
                         .font(.title2)
-                    
+
                 }
-                
+
                 HStack {
-                    
+
                     VStack {
                         Text("Available")
-                        Text("php 7,739.00")
+                        Text(balance.availableBalance)
                     }
-                    
+
                     Spacer()
-                    
+
                     VStack {
                         Text("Current")
-                        Text("php 13,746.04")
+                        Text(balance.currentBalance)
                     }
-                    
+
+                }
+                .onAppear{
+                    balance.getBalance()
                 }
                 .padding()
                 .padding(.top, -10)
-                
+
             }
             .frame(maxWidth: .infinity)
             .padding(.trailing, 10)

@@ -16,8 +16,12 @@ class UserTable
     var fname: String = ""
     var mname: String = ""
     var lname: String = ""
+    var birthdate: String = ""
+    var nationality: String = ""
+    var email: String = ""
+    var gender: Int
     
-    init(id: Int, token: String, username: String, fname: String, mname: String, lname: String)
+    init(id: Int, token: String, username: String, fname: String, mname: String, lname: String, birthdate: String, nationality: String, email: String, gender: Int)
     {
         self.id = id
         self.token = token
@@ -25,6 +29,10 @@ class UserTable
         self.fname = fname
         self.mname = mname
         self.lname = lname
+        self.birthdate = birthdate
+        self.nationality = nationality
+        self.email = email
+        self.gender = gender
     }
     
 }

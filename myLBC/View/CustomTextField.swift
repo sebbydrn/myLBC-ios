@@ -79,8 +79,13 @@ struct CustomTextField: View {
                         }
                         else if title == "Amount" {
                             
-                            TextField("", text: $value)
-                                .keyboardType(.decimalPad)
+//                            TextField("", text: Binding<String>(
+//                                get: { $value },
+//                                set: {
+//                                    $value = $0
+//                                    ServiceFeeAPI().getServiceFee(amt: $0)
+//                                }))
+//                                .keyboardType(.decimalPad)
                             
                         }
                         else if title == "Service Fee" {

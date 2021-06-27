@@ -36,6 +36,31 @@ struct ProfileDetailsRow: View {
 struct Profile: View {
     @State private var toggleEnterPin = false
     
+    var db: DBHelper = DBHelper()
+    var userAccount: [UserTable] = []
+    
+    var gender = ""
+    
+    init() {
+        userAccount = db.readUser(id: 3)
+        
+        if userAccount[0].gender == 1 {
+            gender = "Male"
+        } else {
+            gender = "Female"
+        }
+    }
+    
+    func isodateFromString(_ isoDate: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        
+        let theDate = formatter.date(from: isoDate)!
+        
+        formatter.dateFormat = "MMM d, yyyy"
+        return formatter.string(from: theDate)
+    }
+    
     var body: some View {
         
         VStack {
@@ -69,11 +94,11 @@ struct Profile: View {
             VStack {
                 
                 let profileData = [
-                    ProfileDetails(label: "NAME", data: "Lemuel Doronio"),
-                    ProfileDetails(label: "BIRTH DATE", data: "Sep 24, 1996"),
-                    ProfileDetails(label: "NATIONALITY", data: "FILIPINO"),
-                    ProfileDetails(label: "EMAIL", data: "lbc.loyalty.dev@gmail.com"),
-                    ProfileDetails(label: "SEX", data: "Male"),
+                    ProfileDetails(label: "NAME", data: "\(userAccount[0].fname) \(userAccount[0].lname)"),
+                    ProfileDetails(label: "BIRTH DATE", data: "\(isodateFromString(userAccount[0].birthdate))"),
+                    ProfileDetails(label: "NATIONALITY", data: "\(userAccount[0].nationality)"),
+                    ProfileDetails(label: "EMAIL", data: "\(userAccount[0].email)"),
+                    ProfileDetails(label: "SEX", data: "\(gender)"),
                 ]
                     
                 List(profileData) { profile in

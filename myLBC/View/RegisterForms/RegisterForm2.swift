@@ -8,6 +8,15 @@
 import SwiftUI
 
 struct RegisterForm2: View {
+    @Binding var fname: String
+    @Binding var mname: String
+    @Binding var lname: String
+    @Binding var maidenName: String
+    @Binding var suffix: String
+    @Binding var gender: Int
+    @Binding var civilStatus: Int
+    @Binding var nationality: String
+    @Binding var bdate: Date
     @State var unitNo = ""
     @State var building = ""
     @State var address1 = ""
@@ -16,12 +25,15 @@ struct RegisterForm2: View {
     @State var mobile = ""
     @State var landline = ""
     @State var email = ""
+    @State var region = ""
     
-    @State private var provinceIndex = 0
-    @State private var municipalityIndex = 0
+    @State var selectedProvince = Provinces(province_id: 0, province_name: "", region: "")
+    @State var selectedCity = Cities(city_id: 0, city_name: "", province: 0)
     
-    var provinces = ["Select", "Nueva Ecija"]
-    @State var municipalities = ["Cabanatuan City", "Science City of Munoz", "Talavera", "San Jose City"]
+    var db: DBHelper = DBHelper()
+    
+    @State var provinces: [Provinces] = []
+    @State var cities: [Cities] = []
     
     @Namespace var animation
     
@@ -53,10 +65,13 @@ struct RegisterForm2: View {
             
             
             // Province field here
-            Picker(selection: $provinceIndex, label: Text("Province")) {
-                ForEach(0 ..< provinces.count) {
-                    Text(self.provinces[$0]).tag($0)
+            Picker(selection: $selectedProvince, label: Text("Province")) {
+                ForEach(self.provinces, id: \.self) { item in
+                    Text(item.province_name)
                 }
+            }
+            .onAppear {
+                self.provinces = db.getProvinces()
             }
             .padding(.horizontal)
             .padding(.vertical, 10)
@@ -64,15 +79,16 @@ struct RegisterForm2: View {
             .border(Color.gray, width: 2)
             .padding(.top)
             .animation(.linear)
-            .onChange(of: provinceIndex, perform: { value in
-                print("Province tag: \(value)")
-//                municipalities = ["Test1", "test2"]
+            .onChange(of: selectedProvince, perform: { value in
+                self.region = value.region
+                self.selectedCity = Cities(city_id: 0, city_name: "", province: 0)
+                self.cities = db.getCity(province_id: value.province_id)
             })
             
             // Municipality field here
-            Picker(selection: $municipalityIndex, label: Text("Municipality")) {
-                ForEach(0 ..< municipalities.count) {
-                    Text(self.municipalities[$0]).tag($0)
+            Picker(selection: $selectedCity, label: Text("Municipality")) {
+                ForEach(self.cities, id: \.self) { item in
+                    Text(item.city_name)
                 }
             }
             .padding(.horizontal)
@@ -93,8 +109,27 @@ struct RegisterForm2: View {
         .navigationBarTitle("Sign Up", displayMode: .large)
         
         VStack(alignment: .center) {
-            NavigationLink(destination: RegisterForm3()) {
-                
+            NavigationLink(destination: RegisterForm3(
+                fname: self.$fname,
+                mname: self.$mname,
+                lname: self.$lname,
+                maidenName: self.$maidenName,
+                suffix: self.$suffix,
+                gender: self.$gender,
+                civilStatus: self.$civilStatus,
+                nationality: self.$nationality,
+                bdate: self.$bdate,
+                unitNo: self.$unitNo,
+                bldg: self.$building,
+                add1: self.$address1,
+                add2: self.$address2,
+                province: self.$selectedProvince.province_id,
+                city: self.$selectedCity.city_id,
+                zip: self.$zipCode,
+                mobile: self.$mobile,
+                landline: self.$landline,
+                email: self.$email
+            )) {
                 Text("NEXT")
                     .foregroundColor(Color.white)
                     .padding(.leading, 20)

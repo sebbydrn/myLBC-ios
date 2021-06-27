@@ -8,22 +8,23 @@
 import SwiftUI
 
 struct RegisterForm: View {
-    @State var firstName = ""
+    @State var firstName: String = ""
     @State var middleName = ""
     @State var lastName = ""
     @State var mothersMaidenName = ""
+    @State var selectedSuffix = Suffix(suffix_id: 0, suffix: "", description: "")
+    @State var selectedGender = Gender(gender_id: 0, gender_name: "")
+    @State var selectedCivilStatus = CivilStatus(status_id: 0, status_name: "")
+    @State var selectedNationality = Nationality(nationality_name: "")
     
-    @State private var suffixIndex = 0
-    @State private var sexIndex = 0
-    @State private var civilStatusIndex = 0
-    @State private var nationalityIndex = 0
+    var db: DBHelper = DBHelper()
     
-    var suffixes = ["None", "III", "IV", "JR", "SR", "V", "VI", "ma"]
-    var sex = ["Female", "Male"]
-    var civilStatus = ["Married", "Separated", "Single", "Widowed"]
-    var nationality = ["Filipino"]
+    @State var suffixes: [Suffix] = []
+    @State var genders: [Gender] = []
+    @State var civilStatuses: [CivilStatus] = []
+    @State var nationalities: [Nationality] = []
     
-    @State private var birthDate = Date()
+    @State var birthDate = Date()
     
     @Namespace var animation
     
@@ -49,12 +50,14 @@ struct RegisterForm: View {
             
             CustomTextFieldReg(image: "person", title: "Last Name", showPassword: false, value: $lastName, animation: animation)
             
-            
             // Suffix field here
-            Picker(selection: $suffixIndex, label: Text("Suffix")) {
-                ForEach(0 ..< suffixes.count) {
-                    Text(self.suffixes[$0]).tag($0)
+            Picker(selection: $selectedSuffix, label: Text("Suffix")) {
+                ForEach(self.suffixes, id: \.self) { item in
+                    Text(item.suffix)
                 }
+            }
+            .onAppear {
+                self.suffixes = db.getSuffix()
             }
             .padding(.horizontal)
             .padding(.vertical, 10)
@@ -75,10 +78,13 @@ struct RegisterForm: View {
                 .animation(.linear)
             
             // Sex field here
-            Picker(selection: $sexIndex, label: Text("Sex")) {
-                ForEach(0 ..< sex.count) {
-                    Text(self.sex[$0]).tag($0)
+            Picker(selection: $selectedGender, label: Text("Sex")) {
+                ForEach(self.genders, id: \.self) { item in
+                    Text(item.gender_name)
                 }
+            }
+            .onAppear {
+                self.genders = db.getGender()
             }
             .padding(.horizontal)
             .padding(.vertical, 10)
@@ -88,10 +94,13 @@ struct RegisterForm: View {
             .animation(.linear)
             
             // Civil status field here
-            Picker(selection: $civilStatusIndex, label: Text("Civil Status")) {
-                ForEach(0 ..< civilStatus.count) {
-                    Text(self.civilStatus[$0]).tag($0)
+            Picker(selection: $selectedCivilStatus, label: Text("Civil Status")) {
+                ForEach(self.civilStatuses, id: \.self) { item in
+                    Text(item.status_name)
                 }
+            }
+            .onAppear {
+                self.civilStatuses = db.getCivilStatus()
             }
             .padding(.horizontal)
             .padding(.vertical, 10)
@@ -101,10 +110,13 @@ struct RegisterForm: View {
             .animation(.linear)
             
             // Nationality field here
-            Picker(selection: $nationalityIndex, label: Text("Nationality")) {
-                ForEach(0 ..< nationality.count) {
-                    Text(self.nationality[$0]).tag($0)
+            Picker(selection: $selectedNationality, label: Text("Nationality")) {
+                ForEach(self.nationalities, id: \.self) { item in
+                    Text(item.nationality_name)
                 }
+            }
+            .onAppear {
+                self.nationalities = db.getNationality()
             }
             .padding(.horizontal)
             .padding(.vertical, 10)
@@ -118,8 +130,17 @@ struct RegisterForm: View {
         .navigationBarTitle("Sign Up", displayMode: .large)
         
         VStack(alignment: .center) {
-            NavigationLink(destination: RegisterForm2()) {
-                
+            NavigationLink(destination: RegisterForm2(
+                fname: self.$firstName,
+                mname: self.$middleName,
+                lname: self.$lastName,
+                maidenName: self.$mothersMaidenName,
+                suffix: self.$selectedSuffix.suffix,
+                gender: self.$selectedGender.gender_id,
+                civilStatus: self.$selectedCivilStatus.status_id,
+                nationality: self.$selectedNationality.nationality_name,
+                bdate: self.$birthDate
+            )) {
                 Text("NEXT")
                     .foregroundColor(Color.white)
                     .padding(.leading, 20)
@@ -135,6 +156,34 @@ struct RegisterForm: View {
                 
             }
             .padding(.top, 10)
+            
+//            NavigationLink(destination: RegisterForm2(
+//                    fname: self.$firstName,
+//                    mname: self.$middleName,
+//                    lname: self.$lastName,
+//                    maidenName: self.$mothersMaidenName,
+//                    suffix: String(self.$selectedSuffix.suffix_id),
+//                    gender: String(self.$selectedGender.gender_id),
+//                    civilStatus: String(self.$selectedCivilStatus.status_id),
+//                    nationality: String(self.$selectedNationality.nationality_name),
+//                    bdate: String(self.$birthDate)
+//                )) {
+//
+//                    Text("NEXT")
+//                        .foregroundColor(Color.white)
+//                        .padding(.leading, 20)
+//                        .padding(.trailing, 20)
+//                        .padding(.top, 10)
+//                        .padding(.bottom, 10)
+//                        .background(Color("crimson"))
+//                        .cornerRadius(8)
+//                        .overlay(
+//                            RoundedRectangle(cornerRadius: 8)
+//                                .stroke(Color("crimson"), lineWidth: 2)
+//                        )
+//
+//                }
+//                .padding(.top, 10)
         }
     }
 }

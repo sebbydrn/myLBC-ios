@@ -10,6 +10,7 @@ import SwiftUI
 struct Transfer: View {
     @State private var toggleComingSoon = false
     
+    @StateObject var balance = balanceAPI()
     
     var body: some View {
         
@@ -28,16 +29,19 @@ struct Transfer: View {
                     
                     VStack {
                         Text("Available")
-                        Text("php 7,739.00")
+                        Text(balance.availableBalance)
                     }
                     
                     Spacer()
                     
                     VStack {
                         Text("Current")
-                        Text("php 13,746.04")
+                        Text(balance.currentBalance)
                     }
                     
+                }
+                .onAppear{
+                    balance.getBalance()
                 }
                 .padding()
                 .padding(.top, -10)

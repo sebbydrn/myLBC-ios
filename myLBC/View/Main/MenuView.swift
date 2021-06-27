@@ -32,15 +32,15 @@ struct MenuView: View {
                 .padding(.top, 150)
                 
                 HStack {
-//                    Text(userAccount[0].fname)
-//                        .foregroundColor(Color.white)
-//                        .font(.title)
-//                    +
-//                    Text(" ")
-//                    +
-//                        Text(userAccount[0].lname)
-//                        .foregroundColor(Color.white)
-//                        .font(.title)
+                    Text(userAccount[0].fname)
+                        .foregroundColor(Color.white)
+                        .font(.title)
+                    +
+                    Text(" ")
+                    +
+                        Text(userAccount[0].lname)
+                        .foregroundColor(Color.white)
+                        .font(.title)
                     
                     Spacer()
                 }

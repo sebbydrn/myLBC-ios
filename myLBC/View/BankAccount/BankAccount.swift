@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct BankAccount: View {
+    var db: DBHelper = DBHelper()
+    
+    @State var banks: [RtaBanks] = []
+    @State var accountTypes: [RtaAcctTypes] = []
+    @State var selectedBank = RtaBanks(bank_id: 0, code: "", name: "")
+    @State var selectAcctType = RtaAcctTypes(rta_type_id: 0, name: "")
+    @State var selectedRelationship = ""
+//    @State var selectedRelationshipDesc = ""
     @State var bankBranch = ""
     @State var accountNumber = ""
     
     @Namespace var animation
     
-    @State private var bankIndex = 0
-    @State private var accountTypeIndex = 0
-    @State private var relationshipIndex = 0
-    
-    var banks = ["AMWSLAI Bank", "Allied Bank", "Allied Savings Bank", "Asia Trust Bank", "Asia United Bank", "Ayala Plans", "BPI Express Cash"]
-    var accountTypes = ["Checking", "Savings"]
     var relationships = ["None", "Donor / Receiver of Charitable Funds", "Employee / Employer", "Family", "Friend", "Purchase / Seller", "Trade / Business Partner"]
     
     var body: some View {
@@ -98,10 +100,13 @@ struct BankAccount: View {
             
             Form {
                 
-                Picker(selection: $bankIndex, label: Text("Bank")) {
-                    ForEach(0 ..< banks.count) {
-                        Text(self.banks[$0]).tag($0)
+                Picker(selection: $selectedBank, label: Text("Bank")) {
+                    ForEach(self.banks, id: \.self) { item in
+                        Text(item.name)
                     }
+                }
+                .onAppear {
+                    self.banks = db.getRTABanks()
                 }
                 .padding(.horizontal)
                 .padding(.vertical, 10)
@@ -112,10 +117,13 @@ struct BankAccount: View {
                 
                 CustomTextFieldTransfer(image: "building", title: "Bank Branch", showPassword: false, value: $bankBranch, animation: animation)
                 
-                Picker(selection: $accountTypeIndex, label: Text("Account Type")) {
-                    ForEach(0 ..< accountTypes.count) {
-                        Text(self.accountTypes[$0]).tag($0)
+                Picker(selection: $selectAcctType, label: Text("Account Type")) {
+                    ForEach(self.accountTypes, id: \.self) { item in
+                        Text(item.name)
                     }
+                }
+                .onAppear {
+                    self.accountTypes = db.getRTAAcctTypes()
                 }
                 .padding(.horizontal)
                 .padding(.vertical, 10)
@@ -126,11 +134,15 @@ struct BankAccount: View {
                 
                 CustomTextFieldTransfer(image: "number", title: "Account Number", showPassword: false, value: $accountNumber, animation: animation)
 
-                Picker(selection: $relationshipIndex, label: Text("Relationship to acct holder")) {
+                Picker(selection: $selectedRelationship, label: Text("Relationship to acct holder")) {
                     ForEach(0 ..< relationships.count) {
-                        Text(self.relationships[$0]).tag($0)
+                        Text(self.relationships[$0]).tag(self.relationships[$0])
                     }
                 }
+//                .onChange(of: $selectedRelationship, perform: { value in
+//                    self.selectedRelationshipDesc = self.relationships[value]
+//                    print(self.selectedRelationshipDesc)
+//                })
                 .padding(.horizontal)
                 .padding(.vertical, 10)
                 .background(Color.white)
@@ -148,7 +160,13 @@ struct BankAccount: View {
         .padding(.top, 15)
         
         VStack(alignment: .center) {
-            NavigationLink(destination: BankAccount2(saveAccount: false)) {
+            NavigationLink(destination: BankAccount2(
+                rtaBankCode: self.$selectedBank.code,
+                rtaBankBranch: self.$bankBranch,
+                rtaRcvrAcctNo: self.$accountNumber,
+                rtaRel: self.$selectedRelationship,
+                saveAccount: false
+            )) {
                 
                 Text("NEXT")
                     .foregroundColor(Color.white)

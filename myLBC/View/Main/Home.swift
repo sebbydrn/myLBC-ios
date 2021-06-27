@@ -10,21 +10,6 @@ import SwiftUI
 struct Home: View {
     @State var showMenu = false
     
-//    init() {
-//        UINavigationBar.appearance().backgroundColor = UIColor(Color("crimson"))
-//    }
-    
-    var db: DBHelper = DBHelper()
-    var userAccount: [UserTable] = []
-    @State var availableBalance = ""
-    @State var currentBalance = ""
-    
-    init() {
-        let userCount = db.countUsers()
-        userAccount = db.readUser(id: userCount)
-        getBalance()
-    }
-    
     var body: some View {
         
         let drag = DragGesture()
@@ -40,14 +25,14 @@ struct Home: View {
             
             ZStack(alignment: .leading) {
                 
-                MainView(showMenu: self.$showMenu, availableBalance: self.$availableBalance, currentBalance: self.$currentBalance)
+                MainView(showMenu: self.$showMenu)
                     .frame(width: geometry.size.width, height: geometry.size.height)
-                    .offset(x: self.showMenu ? geometry.size.width/1.2 : 0)
+                    .offset(x: self.showMenu ? geometry.size.width/1.5 : 0)
                     .disabled(self.showMenu ? true : false)
                 
                 if self.showMenu {
                     MenuView()
-                        .frame(width: geometry.size.width/1.2)
+                        .frame(width: geometry.size.width/1.5)
                         .transition(.move(edge: .leading))
                 }
                 
@@ -67,52 +52,6 @@ struct Home: View {
                                 }
         ))
     }
-    
-    func getBalance() {
-        let userToken = userAccount[0].token
-        
-        print(userToken)
-        
-        guard let url = URL(string: "http://ec2-54-251-121-234.ap-southeast-1.compute.amazonaws.com:3000/lbcapi/ss/getBalance") else { return }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(userToken)", forHTTPHeaderField: "Authorization")
-        
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data else { return }
-            
-            let finalData = try? JSONDecoder().decode(BalanceMessage.self, from: data)
-            
-            print(finalData)
-            
-            if finalData?.message == "Balance has been successfully retrieved" {
-                DispatchQueue.main.async {
-                    self.availableBalance = finalData!.result.availableBalance
-                    self.currentBalance = finalData!.result.currentBalance
-                    
-                    print(finalData!.result.availableBalance)
-                    print(finalData!.result.currentBalance)
-                }
-            } else {
-                print("Cannot retrieve balance")
-            }
-        }.resume()
-    }
-}
-
-struct BalanceMessage: Codable {
-    let id: String
-    let message: String
-    let result: BalanceResult
-}
-
-struct BalanceResult: Codable {
-    let responseCode: Int
-    let availableBalance: String
-    let currentBalance: String
 }
 
 struct MainView: View {
@@ -120,8 +59,7 @@ struct MainView: View {
     
     @State private var toggleComingSoon = false
     
-    @Binding var availableBalance: String
-    @Binding var currentBalance: String
+    @StateObject var balance = balanceAPI()
     
     var body: some View {
         
@@ -142,16 +80,19 @@ struct MainView: View {
 
                         VStack {
                             Text("Available")
-                            Text(availableBalance)
+                            Text(balance.availableBalance)
                         }
 
                         Spacer()
 
                         VStack {
                             Text("Current")
-                            Text(currentBalance)
+                            Text(balance.currentBalance)
                         }
 
+                    }
+                    .onAppear{
+                        balance.getBalance()
                     }
                     .padding()
                     .padding(.top, -10)

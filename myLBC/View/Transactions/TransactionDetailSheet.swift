@@ -9,6 +9,15 @@ import SwiftUI
 
 struct TransactionDetailSheet: View {
     @Binding var showModal: Bool
+    @Binding var trxnRef: String
+    @Binding var trxDate: String
+    @Binding var trxBranch: String
+    @Binding var trxGrossAmt: String
+    @Binding var trxFreightFee: String
+    @Binding var trxCodFee: String
+    @Binding var trxRts: String
+    @Binding var trxOtherFee: String
+    @Binding var trxNetAmt: String
     
     var body: some View {
         
@@ -29,7 +38,7 @@ struct TransactionDetailSheet: View {
                     
                     Spacer()
                     
-                    Text("1234567890")
+                    Text(trxnRef)
                     
                 }
                 .padding(.leading, 10)
@@ -42,7 +51,7 @@ struct TransactionDetailSheet: View {
                     
                     Spacer()
                     
-                    Text("Mar 25, 2021 11:55:15 AM")
+                    Text(trxDate)
                     
                 }
                 .padding(.leading, 10)
@@ -55,7 +64,7 @@ struct TransactionDetailSheet: View {
                     
                     Spacer()
                     
-                    Text("")
+                    Text(trxBranch)
                     
                 }
                 .padding(.leading, 10)
@@ -68,7 +77,7 @@ struct TransactionDetailSheet: View {
                     
                     Spacer()
                     
-                    Text("2.00")
+                    Text(trxGrossAmt)
                     
                 }
                 .padding(.leading, 10)
@@ -81,7 +90,7 @@ struct TransactionDetailSheet: View {
                     
                     Spacer()
                     
-                    Text("")
+                    Text(trxFreightFee)
                     
                 }
                 .padding(.leading, 10)
@@ -94,7 +103,7 @@ struct TransactionDetailSheet: View {
                     
                     Spacer()
                     
-                    Text("")
+                    Text(trxCodFee)
                     
                 }
                 .padding(.leading, 10)
@@ -107,7 +116,7 @@ struct TransactionDetailSheet: View {
                     
                     Spacer()
                     
-                    Text("")
+                    Text(trxRts)
                     
                 }
                 .padding(.leading, 10)
@@ -120,7 +129,7 @@ struct TransactionDetailSheet: View {
                     
                     Spacer()
                     
-                    Text("")
+                    Text(trxOtherFee)
                     
                 }
                 .padding(.leading, 10)
@@ -133,7 +142,7 @@ struct TransactionDetailSheet: View {
                     
                     Spacer()
                     
-                    Text("12.00")
+                    Text(trxNetAmt)
                     
                 }
                 .padding(.leading, 10)
@@ -160,8 +169,6 @@ struct TransactionDetailSheet: View {
                         .stroke(Color("crimson"), lineWidth: 2)
                 )
             }
-            
-//            Spacer()
             
         }
         .padding()

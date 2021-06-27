@@ -21,6 +21,7 @@ struct TransactionHistory: View {
                     .tabItem {
                         Label("COMPLETED", systemImage: "checkmark.circle")
                     }
+                    
             }
         }
         .navigationTitle("My Transactions")

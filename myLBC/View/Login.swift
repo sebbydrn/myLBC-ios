@@ -21,7 +21,7 @@ class HttpAuth: ObservableObject {
     var db:DBHelper = DBHelper()
     
     func checkDetails(email: String, password: String, secretKey: String) {
-        guard let url = URL(string: "http://ec2-54-251-121-234.ap-southeast-1.compute.amazonaws.com:3000/lbcapi/ss/login") else { return }
+        guard let url = URL(string: "http://192.168.1.30:3000/lbcapi/ss/login") else { return }
         
         let body: [String: String] = ["email": email, "password": password, "secretKey": secretKey]
         
@@ -46,9 +46,19 @@ class HttpAuth: ObservableObject {
                     
 //                    self.db.deleteUsers()
                     
-                    self.db.insertUser(token: finalData!.result.token, username: finalData!.result.userDetails.username, fname: finalData!.result.userDetails.cifDtls.fname, mname: finalData!.result.userDetails.cifDtls.mname, lname: finalData!.result.userDetails.cifDtls.lname)
+                    self.db.insertUser(
+                        token: finalData!.result.token,
+                        username: finalData!.result.userDetails.username,
+                        fname: finalData!.result.userDetails.cifDtls.fname,
+                        mname: finalData!.result.userDetails.cifDtls.mname,
+                        lname: finalData!.result.userDetails.cifDtls.lname,
+                        birthdate: finalData!.result.userDetails.cifDtls.birthdate,
+                        nationality: finalData!.result.userDetails.cifDtls.nationality,
+                        email: finalData!.result.userDetails.cifDtls.email,
+                        gender: finalData!.result.userDetails.cifDtls.gender
+                    )
                     
-                    print(finalData!.result.token)
+//                    print(finalData!.result.token)
                     
                     self.authenticated = true
                 }
@@ -77,9 +87,16 @@ struct ServerUserDetails: Codable {
     let username: String
     let uid: Int
     let cifDtls: ServerUserDetailsCIF
+    let priWallet: Int
 }
 
 struct ServerUserDetailsCIF: Codable {
+    let info_id: Int
+    let auth_id: Int
+    let cust_type_id: Int
+    let cust_no: String
+    let external_id: String?
+    let card_number: String?
     let fname: String
     let mname: String
     let lname: String
@@ -100,36 +117,34 @@ struct ServerUserDetailsCIF: Codable {
     let landline: String
     let email: String
     let occupation: String
-    let company_name: String
+    let company_name: String?
     let id_type: Int
     let id_number: String
     let id_expiry: String
+    let id_photo: ServerIdPhotoDetails
+    let cust_photo: ServerCustPhotoDetails
+    let tin: String?
+    let date_added: String
+    let is_sub: Int
+    let hash: String
+    let gender_name: String
+    let wallet_id: Int
+    let acct_no: String
+    let acct_desc: String
+    let active: Int
 }
 
-struct LibrariesMessage: Codable {
-    let id: String
-    let message: String
-    let result: LibrariesResult
+struct ServerIdPhotoDetails: Codable {
+    let type: String
 }
 
-struct LibrariesResult: Codable {
-    let responseCode: Int
-    let dictionaries: DictionariesData
-}
-
-struct DictionariesData: Codable {
-    var provinces: [ProvincesData] = []
-}
-
-struct ProvincesData: Codable {
-    let province_id: Int
-    let province_name: String
-    let region: String
+struct ServerCustPhotoDetails: Codable {
+    let type: String
 }
 
 struct Login: View {
-    @State var username = ""
-    @State var password = ""
+    @State var username = "lemdoronio.24@gmail.com"
+    @State var password = "ASDFgh11!!"
     @State var secretKey = "Loyalty2019"
     @State var isLinkActive = false
     
@@ -139,51 +154,10 @@ struct Login: View {
     
     var db:DBHelper = DBHelper()
     
-    func getProvinces() {
-        var provincesRes: [ProvincesData] = []
-        
-        guard let url = URL(string: "http://ec2-54-251-121-234.ap-southeast-1.compute.amazonaws.com:3000/lbcapi/ss/loadDictionaries") else { return }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data else { return }
-            
-            let finalData = try? JSONDecoder().decode(LibrariesMessage.self, from: data)
-            
-            print(finalData!.message)
-            provincesRes = finalData!.result.dictionaries.provinces
-            print(provincesRes.count)
-            
-            var count = 0
-            
-            while count < provincesRes.count {
-                print(provincesRes[count].province_name)
-                count += 1
-            }
-            
-            // TODO save provinces
-//            if finalData?.message == "User is authenticated!" {
-//
-//                DispatchQueue.main.async {
-//                    print("User is authenticated")
-//
-//                    self.db.insertUser(token: finalData!.result.token, username: finalData!.result.userDetails.username, fname: finalData!.result.userDetails.cifDtls.fname, mname: finalData!.result.userDetails.cifDtls.mname, lname: finalData!.result.userDetails.cifDtls.lname)
-//
-//                    self.authenticated = true
-//                }
-//
-//            } else {
-//                print("Incorrect username or password")
-//            }
-        }.resume()
-        
-    }
+    
     
     init() {
+        DictionaryAPI().loadDictionaries()
 //        db.deleteUsers()
 //        getProvinces()
 //        db.createUserTable()
@@ -254,8 +228,8 @@ struct Login: View {
                 
                 
                 Button(action: {
-                    print(self.username)
-                    print(self.password)
+//                    print(self.username)
+//                    print(self.password)
 
                     self.userAuth.checkDetails(email: self.username, password: self.password, secretKey: self.secretKey)
                 }) {

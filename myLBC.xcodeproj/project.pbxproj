@@ -10,6 +10,35 @@
 		482609D9265D150100DE452E /* UserTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482609D8265D150100DE452E /* UserTable.swift */; };
 		482609E5265D15F900DE452E /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482609E4265D15F900DE452E /* DBHelper.swift */; };
 		482609F0265D610000DE452E /* ProvincesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482609EF265D610000DE452E /* ProvincesTable.swift */; };
+		483EF0EB267E4487009E6E4E /* balanceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EF0EA267E4487009E6E4E /* balanceAPI.swift */; };
+		483EF0F4267E6021009E6E4E /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EF0F3267E6021009E6E4E /* Balance.swift */; };
+		483EF0F6267F4C65009E6E4E /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EF0F5267F4C65009E6E4E /* Transaction.swift */; };
+		483EF0F8267F4DCB009E6E4E /* TransactionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483EF0F7267F4DCB009E6E4E /* TransactionAPI.swift */; };
+		4851D6082680D0E900BC9515 /* Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851D6072680D0E900BC9515 /* Tracking.swift */; };
+		4851D60A2680D2D000BC9515 /* TrackingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851D6092680D2D000BC9515 /* TrackingAPI.swift */; };
+		4851D60C26820ACB00BC9515 /* ServiceFee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851D60B26820ACB00BC9515 /* ServiceFee.swift */; };
+		4851D60E26820B4800BC9515 /* ServiceFeeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851D60D26820B4800BC9515 /* ServiceFeeAPI.swift */; };
+		4851D6102682283300BC9515 /* Cashout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851D60F2682283300BC9515 /* Cashout.swift */; };
+		4851D6122682288A00BC9515 /* CashoutAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851D6112682288A00BC9515 /* CashoutAPI.swift */; };
+		4851D6142686ED1E00BC9515 /* Province.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851D6132686ED1E00BC9515 /* Province.swift */; };
+		4851D6162686ED7400BC9515 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851D6152686ED7400BC9515 /* City.swift */; };
+		4851D6182686EDAF00BC9515 /* CivilStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851D6172686EDAF00BC9515 /* CivilStatus.swift */; };
+		4851D61A2686EDE800BC9515 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851D6192686EDE800BC9515 /* Gender.swift */; };
+		4851D61C2686EE0E00BC9515 /* Nationality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851D61B2686EE0E00BC9515 /* Nationality.swift */; };
+		4851D61E2686EE7B00BC9515 /* IdType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851D61D2686EE7B00BC9515 /* IdType.swift */; };
+		4851D6202686EEAA00BC9515 /* Suffix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851D61F2686EEAA00BC9515 /* Suffix.swift */; };
+		4851D6222686EEDE00BC9515 /* rtaBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851D6212686EEDE00BC9515 /* rtaBank.swift */; };
+		4851D6242686EFA200BC9515 /* rtaAcctType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851D6232686EFA200BC9515 /* rtaAcctType.swift */; };
+		4851D6262686EFEC00BC9515 /* rtaCutoffMsgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851D6252686EFEC00BC9515 /* rtaCutoffMsgs.swift */; };
+		4851D6282686F03800BC9515 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851D6272686F03800BC9515 /* Dictionary.swift */; };
+		4851D62B2686F13D00BC9515 /* DictionaryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4851D62A2686F13C00BC9515 /* DictionaryAPI.swift */; };
+		4865807F2687805900847566 /* SignupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4865807E2687805900847566 /* SignupAPI.swift */; };
+		486580812687F42600847566 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486580802687F42600847566 /* Signup.swift */; };
+		486580832688D29100847566 /* ChangePass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486580822688D29100847566 /* ChangePass.swift */; };
+		486580852688D33400847566 /* ChangePassAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486580842688D33400847566 /* ChangePassAPI.swift */; };
+		486580872688D7CC00847566 /* RTAAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486580862688D7CC00847566 /* RTAAccounts.swift */; };
+		486580892688D8CD00847566 /* RTAAccountsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486580882688D8CC00847566 /* RTAAccountsAPI.swift */; };
+		4865808B2688ECD500847566 /* RTATransferAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4865808A2688ECD400847566 /* RTATransferAPI.swift */; };
 		487CAAE72621E279008A971D /* myLBCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAAE62621E279008A971D /* myLBCApp.swift */; };
 		487CAAE92621E279008A971D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487CAAE82621E279008A971D /* ContentView.swift */; };
 		487CAAEB2621E27A008A971D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487CAAEA2621E27A008A971D /* Assets.xcassets */; };
@@ -71,6 +100,35 @@
 		482609D8265D150100DE452E /* UserTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTable.swift; sourceTree = "<group>"; };
 		482609E4265D15F900DE452E /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		482609EF265D610000DE452E /* ProvincesTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvincesTable.swift; sourceTree = "<group>"; };
+		483EF0EA267E4487009E6E4E /* balanceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = balanceAPI.swift; sourceTree = "<group>"; };
+		483EF0F3267E6021009E6E4E /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
+		483EF0F5267F4C65009E6E4E /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		483EF0F7267F4DCB009E6E4E /* TransactionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionAPI.swift; sourceTree = "<group>"; };
+		4851D6072680D0E900BC9515 /* Tracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracking.swift; sourceTree = "<group>"; };
+		4851D6092680D2D000BC9515 /* TrackingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingAPI.swift; sourceTree = "<group>"; };
+		4851D60B26820ACB00BC9515 /* ServiceFee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFee.swift; sourceTree = "<group>"; };
+		4851D60D26820B4800BC9515 /* ServiceFeeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFeeAPI.swift; sourceTree = "<group>"; };
+		4851D60F2682283300BC9515 /* Cashout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cashout.swift; sourceTree = "<group>"; };
+		4851D6112682288A00BC9515 /* CashoutAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashoutAPI.swift; sourceTree = "<group>"; };
+		4851D6132686ED1E00BC9515 /* Province.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Province.swift; sourceTree = "<group>"; };
+		4851D6152686ED7400BC9515 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		4851D6172686EDAF00BC9515 /* CivilStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivilStatus.swift; sourceTree = "<group>"; };
+		4851D6192686EDE800BC9515 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		4851D61B2686EE0E00BC9515 /* Nationality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nationality.swift; sourceTree = "<group>"; };
+		4851D61D2686EE7B00BC9515 /* IdType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdType.swift; sourceTree = "<group>"; };
+		4851D61F2686EEAA00BC9515 /* Suffix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suffix.swift; sourceTree = "<group>"; };
+		4851D6212686EEDE00BC9515 /* rtaBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rtaBank.swift; sourceTree = "<group>"; };
+		4851D6232686EFA200BC9515 /* rtaAcctType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rtaAcctType.swift; sourceTree = "<group>"; };
+		4851D6252686EFEC00BC9515 /* rtaCutoffMsgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rtaCutoffMsgs.swift; sourceTree = "<group>"; };
+		4851D6272686F03800BC9515 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		4851D62A2686F13C00BC9515 /* DictionaryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryAPI.swift; sourceTree = "<group>"; };
+		4865807E2687805900847566 /* SignupAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupAPI.swift; sourceTree = "<group>"; };
+		486580802687F42600847566 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
+		486580822688D29100847566 /* ChangePass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePass.swift; sourceTree = "<group>"; };
+		486580842688D33400847566 /* ChangePassAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassAPI.swift; sourceTree = "<group>"; };
+		486580862688D7CC00847566 /* RTAAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTAAccounts.swift; sourceTree = "<group>"; };
+		486580882688D8CC00847566 /* RTAAccountsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTAAccountsAPI.swift; sourceTree = "<group>"; };
+		4865808A2688ECD400847566 /* RTATransferAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTATransferAPI.swift; sourceTree = "<group>"; };
 		487CAAE32621E279008A971D /* myLBC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myLBC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		487CAAE62621E279008A971D /* myLBCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myLBCApp.swift; sourceTree = "<group>"; };
 		487CAAE82621E279008A971D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -159,6 +217,49 @@
 			path = DatabaseHelper;
 			sourceTree = "<group>";
 		};
+		483EF0E9267E446F009E6E4E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				483EF0EA267E4487009E6E4E /* balanceAPI.swift */,
+				483EF0F7267F4DCB009E6E4E /* TransactionAPI.swift */,
+				4851D6092680D2D000BC9515 /* TrackingAPI.swift */,
+				4851D60D26820B4800BC9515 /* ServiceFeeAPI.swift */,
+				4851D6112682288A00BC9515 /* CashoutAPI.swift */,
+				4851D62A2686F13C00BC9515 /* DictionaryAPI.swift */,
+				4865807E2687805900847566 /* SignupAPI.swift */,
+				486580842688D33400847566 /* ChangePassAPI.swift */,
+				486580882688D8CC00847566 /* RTAAccountsAPI.swift */,
+				4865808A2688ECD400847566 /* RTATransferAPI.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		483EF0EC267E44FA009E6E4E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				483EF0F3267E6021009E6E4E /* Balance.swift */,
+				483EF0F5267F4C65009E6E4E /* Transaction.swift */,
+				4851D6072680D0E900BC9515 /* Tracking.swift */,
+				4851D60B26820ACB00BC9515 /* ServiceFee.swift */,
+				4851D60F2682283300BC9515 /* Cashout.swift */,
+				4851D6132686ED1E00BC9515 /* Province.swift */,
+				4851D6152686ED7400BC9515 /* City.swift */,
+				4851D6172686EDAF00BC9515 /* CivilStatus.swift */,
+				4851D6192686EDE800BC9515 /* Gender.swift */,
+				4851D61B2686EE0E00BC9515 /* Nationality.swift */,
+				4851D61D2686EE7B00BC9515 /* IdType.swift */,
+				4851D61F2686EEAA00BC9515 /* Suffix.swift */,
+				4851D6212686EEDE00BC9515 /* rtaBank.swift */,
+				4851D6232686EFA200BC9515 /* rtaAcctType.swift */,
+				4851D6252686EFEC00BC9515 /* rtaCutoffMsgs.swift */,
+				4851D6272686F03800BC9515 /* Dictionary.swift */,
+				486580802687F42600847566 /* Signup.swift */,
+				486580822688D29100847566 /* ChangePass.swift */,
+				486580862688D7CC00847566 /* RTAAccounts.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		487CAADA2621E279008A971D = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +283,8 @@
 		487CAAE52621E279008A971D /* myLBC */ = {
 			isa = PBXGroup;
 			children = (
+				483EF0EC267E44FA009E6E4E /* Model */,
+				483EF0E9267E446F009E6E4E /* ViewModel */,
 				482609E3265D15DF00DE452E /* DatabaseHelper */,
 				482609D7265D14EB00DE452E /* Tables */,
 				488F5262265A64470031DEEE /* Managers */,
@@ -428,31 +531,56 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4851D6242686EFA200BC9515 /* rtaAcctType.swift in Sources */,
+				4851D6082680D0E900BC9515 /* Tracking.swift in Sources */,
 				487CAB8F26340B79008A971D /* TransactionDetailSheet.swift in Sources */,
+				483EF0EB267E4487009E6E4E /* balanceAPI.swift in Sources */,
 				488F524126359C890031DEEE /* Profile.swift in Sources */,
 				487CAAF02621E27A008A971D /* Persistence.swift in Sources */,
+				4851D6182686EDAF00BC9515 /* CivilStatus.swift in Sources */,
 				487CAB85263402DC008A971D /* PendingView.swift in Sources */,
+				486580832688D29100847566 /* ChangePass.swift in Sources */,
 				488F5264265A645E0031DEEE /* CoreDataManager.swift in Sources */,
 				487CAB942634132B008A971D /* CashOut.swift in Sources */,
+				4851D60E26820B4800BC9515 /* ServiceFeeAPI.swift in Sources */,
 				487CAB1A262AEC5D008A971D /* Login.swift in Sources */,
+				4865808B2688ECD500847566 /* RTATransferAPI.swift in Sources */,
 				487CABA8263454B1008A971D /* SavedAccounts.swift in Sources */,
 				487CAB47262C43ED008A971D /* CustomTextFieldReg.swift in Sources */,
+				483EF0F8267F4DCB009E6E4E /* TransactionAPI.swift in Sources */,
+				4851D6222686EEDE00BC9515 /* rtaBank.swift in Sources */,
+				4851D60C26820ACB00BC9515 /* ServiceFee.swift in Sources */,
+				4851D6122682288A00BC9515 /* CashoutAPI.swift in Sources */,
+				486580872688D7CC00847566 /* RTAAccounts.swift in Sources */,
+				4865807F2687805900847566 /* SignupAPI.swift in Sources */,
+				4851D6142686ED1E00BC9515 /* Province.swift in Sources */,
 				487CAB23262AF373008A971D /* CustomTextField.swift in Sources */,
 				488F5237263485F00031DEEE /* BankAccount2.swift in Sources */,
+				4851D6262686EFEC00BC9515 /* rtaCutoffMsgs.swift in Sources */,
 				487CAB9926341F76008A971D /* BranchCollect.swift in Sources */,
 				487CAB2D262B2FA5008A971D /* ForgotPassword.swift in Sources */,
 				482609D9265D150100DE452E /* UserTable.swift in Sources */,
 				488F524E2635A5CA0031DEEE /* EnterPin.swift in Sources */,
+				486580892688D8CD00847566 /* RTAAccountsAPI.swift in Sources */,
+				483EF0F4267E6021009E6E4E /* Balance.swift in Sources */,
 				487CAB7F2633FECD008A971D /* TransactionHistory.swift in Sources */,
 				487CAB37262B36D9008A971D /* CustomButton.swift in Sources */,
+				4851D6202686EEAA00BC9515 /* Suffix.swift in Sources */,
 				487CAAF32621E27A008A971D /* myLBC.xcdatamodeld in Sources */,
 				487CABA3263450AF008A971D /* BankAccount.swift in Sources */,
+				4851D61C2686EE0E00BC9515 /* Nationality.swift in Sources */,
 				487CAB6D262E6700008A971D /* Home.swift in Sources */,
 				487CAB8A263402E5008A971D /* CompletedView.swift in Sources */,
+				4851D62B2686F13D00BC9515 /* DictionaryAPI.swift in Sources */,
+				486580852688D33400847566 /* ChangePassAPI.swift in Sources */,
 				488F525B2635B56D0031DEEE /* ChangePassword.swift in Sources */,
+				4851D60A2680D2D000BC9515 /* TrackingAPI.swift in Sources */,
 				487CABAD263479ED008A971D /* CustomTextFieldTransfer.swift in Sources */,
+				4851D61A2686EDE800BC9515 /* Gender.swift in Sources */,
 				488F523C263595A30031DEEE /* TrackTrace.swift in Sources */,
+				486580812687F42600847566 /* Signup.swift in Sources */,
 				487CAB3C262BB224008A971D /* RegisterForm.swift in Sources */,
+				4851D61E2686EE7B00BC9515 /* IdType.swift in Sources */,
 				487CAB75262E6873008A971D /* MenuView.swift in Sources */,
 				487CAB5E262D2D3C008A971D /* RegisterForm3.swift in Sources */,
 				487CAB32262B353C008A971D /* ForgotPasswordSheet.swift in Sources */,
@@ -460,11 +588,15 @@
 				488F52532635A79E0031DEEE /* Security.swift in Sources */,
 				487CAB28262B2C4A008A971D /* RememberMeField.swift in Sources */,
 				487CAAE92621E279008A971D /* ContentView.swift in Sources */,
+				4851D6282686F03800BC9515 /* Dictionary.swift in Sources */,
+				483EF0F6267F4C65009E6E4E /* Transaction.swift in Sources */,
 				487CAAE72621E279008A971D /* myLBCApp.swift in Sources */,
 				487CAB9E263449DF008A971D /* Transfer.swift in Sources */,
 				482609F0265D610000DE452E /* ProvincesTable.swift in Sources */,
+				4851D6102682283300BC9515 /* Cashout.swift in Sources */,
 				482609E5265D15F900DE452E /* DBHelper.swift in Sources */,
 				487CAB7A2633DFBE008A971D /* ComingSoonSheet.swift in Sources */,
+				4851D6162686ED7400BC9515 /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
