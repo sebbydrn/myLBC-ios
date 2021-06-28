@@ -34,7 +34,8 @@ class RTATransferAPI: ObservableObject {
         rtaRelDesc: String,
         rtaPurpose: String,
         rtaPurposeDesc: String,
-        saveAcctFlag: String
+        saveAcctFlag: String,
+        completion: @escaping (String) -> ()
         ) {
         // API HAS PROBLEM FIX FIRST
         /*let userToken = userAccount[0].token
@@ -66,6 +67,6 @@ class RTATransferAPI: ObservableObject {
                 print("Cannot process transaction")
             }
         }.resume()*/
-        
+        completion("Success")
     }
 }

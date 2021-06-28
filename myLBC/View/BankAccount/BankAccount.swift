@@ -21,7 +21,7 @@ struct BankAccount: View {
     
     @Namespace var animation
     
-    var relationships = ["None", "Donor / Receiver of Charitable Funds", "Employee / Employer", "Family", "Friend", "Purchase / Seller", "Trade / Business Partner"]
+    var relationships = ["None", "Donor / Receiver of Charitable Funds", "Employee / Employer", "Family", "Friends", "Personal/Own Account", "Purchase / Seller", "Trade / Business Partner"]
     
     var body: some View {
         

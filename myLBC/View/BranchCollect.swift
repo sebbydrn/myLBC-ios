@@ -14,7 +14,13 @@ struct BranchCollect: View {
     
     @State var amt: String = ""
     @State var serviceFee: String = "0.0"
+    @State var selectedRelationship = ""
+    @State var selectedPurpose = ""
     @State private var showSuccessAlert = false
+    
+    var relationships = ["None", "Donor / Receiver of Charitable Funds", "Employee / Employer", "Family", "Friends", "Personal/Own Account", "Purchase / Seller", "Trade / Business Partner"]
+    
+    var purposes = ["None", "Charity / Aid Payment", "Education / School Fees", "Emergency Medical Aid", "Employee Payroll/Expense", "Family Support/ Living Expenses", "Gift", "Goods & Srvcs Payment/ Commercial Trxn", "Prize or Lottery Fees/ Taxes", "Rent/ Mortgage", "Savings/ Investments", "Travel Expenses"]
     
     @Namespace var animation
     
@@ -94,30 +100,20 @@ struct BranchCollect: View {
                 .padding(.leading, 15)
                 .padding(.trailing, 15)
                 
-                VStack(spacing: 6) {
-                    
-                    HStack(alignment: .bottom) {
+                Form {
+                
+                    VStack(spacing: 6) {
                         
-                        Image(systemName: "pesosign.circle")
-                            .font(.system(size: 22))
-                            .foregroundColor(.primary)
-                            .frame(width: 35)
-                        
-                        VStack(alignment: .leading, spacing: 6) {
+                        HStack(alignment: .bottom) {
                             
-                            if self.amt != "" {
-                                
-                                Text("Amount")
-                                    .font(.caption)
-                                    .fontWeight(.heavy)
-                                    .foregroundColor(.gray)
-                                    .matchedGeometryEffect(id: "Amount", in: animation)
-                                
-                            }
+                            Image(systemName: "pesosign.circle")
+                                .font(.system(size: 22))
+                                .foregroundColor(.primary)
+                                .frame(width: 35)
                             
-                            ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
+                            VStack(alignment: .leading, spacing: 6) {
                                 
-                                if self.amt == "" {
+                                if self.amt != "" {
                                     
                                     Text("Amount")
                                         .font(.caption)
@@ -127,62 +123,61 @@ struct BranchCollect: View {
                                     
                                 }
                                 
-                                TextField(self.amt, text: Binding<String>(
-                                    get: { self.amt },
-                                    set: {
-                                        self.amt = $0
-                                        serviceFeeAPI.getServiceFee(amt: $0)
-                                        self.serviceFee = serviceFeeAPI.serviceFee
+                                ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
+                                    
+                                    if self.amt == "" {
+                                        
+                                        Text("Amount")
+                                            .font(.caption)
+                                            .fontWeight(.heavy)
+                                            .foregroundColor(.gray)
+                                            .matchedGeometryEffect(id: "Amount", in: animation)
+                                        
                                     }
-                                ))
-                                .keyboardType(.decimalPad)
-                                
+                                    
+                                    TextField(self.amt, text: Binding<String>(
+                                        get: { self.amt },
+                                        set: {
+                                            self.amt = $0
+                                            serviceFeeAPI.getServiceFee(amt: $0)
+                                            self.serviceFee = serviceFeeAPI.serviceFee
+                                        }
+                                    ))
+                                    .keyboardType(.decimalPad)
+                                    
+                                    
+                                }
                                 
                             }
                             
                         }
                         
-                    }
-                    
-                    if self.amt == "" {
-                        Divider()
-                    }
-                    
-                    
-                }
-                .padding(.horizontal)
-                .padding(.vertical, 10)
-                .background(Color("txt").opacity(self.amt != "" ? 1 : 0))
-                .background(Color.white)
-                .border(self.amt != "" ? Color("crimson") : Color.gray, width: 2)
-                .padding(.horizontal)
-                .padding(.top)
-                .animation(.linear)
-                
-                VStack(spacing: 6) {
-                    
-                    HStack(alignment: .bottom) {
+                        if self.amt == "" {
+                            Divider()
+                        }
                         
-                        Image(systemName: "pesosign.circle")
-                            .font(.system(size: 22))
-                            .foregroundColor(.primary)
-                            .frame(width: 35)
                         
-                        VStack(alignment: .leading, spacing: 6) {
+                    }
+                    .padding(.horizontal)
+                    .padding(.vertical, 10)
+                    .background(Color("txt").opacity(self.amt != "" ? 1 : 0))
+                    .background(Color.white)
+                    .border(self.amt != "" ? Color("crimson") : Color.gray, width: 2)
+                    .padding(.top)
+                    .animation(.linear)
+                    
+                    VStack(spacing: 6) {
+                        
+                        HStack(alignment: .bottom) {
                             
-                            if self.serviceFee != "" {
-                                
-                                Text("Service Fee")
-                                    .font(.caption)
-                                    .fontWeight(.heavy)
-                                    .foregroundColor(.gray)
-                                    .matchedGeometryEffect(id: "Service Fee", in: animation)
-                                
-                            }
+                            Image(systemName: "pesosign.circle")
+                                .font(.system(size: 22))
+                                .foregroundColor(.primary)
+                                .frame(width: 35)
                             
-                            ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
+                            VStack(alignment: .leading, spacing: 6) {
                                 
-                                if self.serviceFee == "" {
+                                if self.serviceFee != "" {
                                     
                                     Text("Service Fee")
                                         .font(.caption)
@@ -192,29 +187,74 @@ struct BranchCollect: View {
                                     
                                 }
                                 
-                                TextField(self.serviceFee, text: self.$serviceFee).disabled(true)
-                                
+                                ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
+                                    
+                                    if self.serviceFee == "" {
+                                        
+                                        Text("Service Fee")
+                                            .font(.caption)
+                                            .fontWeight(.heavy)
+                                            .foregroundColor(.gray)
+                                            .matchedGeometryEffect(id: "Service Fee", in: animation)
+                                        
+                                    }
+                                    
+                                    TextField(self.serviceFee, text: self.$serviceFee).disabled(true)
+                                    
+                                    
+                                }
                                 
                             }
                             
                         }
                         
+                        if self.serviceFee == "" {
+                            Divider()
+                        }
+                        
+                        
+                    }
+                    .padding(.horizontal)
+                    .padding(.vertical, 10)
+                    .background(Color("txt").opacity(self.serviceFee != "" ? 1 : 0))
+                    .background(Color.white)
+                    .border(self.serviceFee != "" ? Color("crimson") : Color.gray, width: 2)
+                    .padding(.top)
+                    .animation(.linear)
+                    
+                    VStack(spacing: 6) {
+                        Picker(selection: $selectedRelationship, label: Text("Relationship")) {
+                            ForEach(0 ..< relationships.count) {
+                                Text(self.relationships[$0]).tag(self.relationships[$0])
+                            }
+                        }
+        //                .onChange(of: $selectedRelationship, perform: { value in
+        //                    self.selectedRelationshipDesc = self.relationships[value]
+        //                    print(self.selectedRelationshipDesc)
+        //                })
+                        .padding(.horizontal)
+                        .padding(.vertical, 10)
+                        .background(Color.white)
+                        .border(Color.gray, width: 2)
+                        .padding(.top)
+                        .animation(.linear)
                     }
                     
-                    if self.serviceFee == "" {
-                        Divider()
+                    VStack(spacing: 6) {
+                        Picker(selection: $selectedPurpose, label: Text("Purpose of Transfer")) {
+                            ForEach(0 ..< purposes.count) {
+                                Text(self.purposes[$0]).tag(self.purposes[$0])
+                            }
+                        }
+                        .padding(.horizontal)
+                        .padding(.vertical, 10)
+                        .background(Color.white)
+                        .border(Color.gray, width: 2)
+                        .padding(.top)
+                        .animation(.linear)
                     }
-                    
                     
                 }
-                .padding(.horizontal)
-                .padding(.vertical, 10)
-                .background(Color("txt").opacity(self.serviceFee != "" ? 1 : 0))
-                .background(Color.white)
-                .border(self.serviceFee != "" ? Color("crimson") : Color.gray, width: 2)
-                .padding(.horizontal)
-                .padding(.top)
-                .animation(.linear)
                 
                 Spacer()
             
@@ -223,11 +263,20 @@ struct BranchCollect: View {
             VStack {
                 
                 Button(action: {
-                    cashoutAPI.cashout(amount: self.amt, fee: self.serviceFee)
+                    cashoutAPI.cashout(
+                        amount: self.amt,
+                        fee: self.serviceFee,
+                        rel: self.selectedRelationship,
+                        relDesc: self.selectedRelationship,
+                        purpose: self.selectedPurpose,
+                        purposeDesc: self.selectedPurpose
+                        )
                     // TODO: completion of async task to trap error
                     self.showSuccessAlert.toggle()
                     self.amt = ""
                     self.serviceFee = "0.0"
+                    self.selectedRelationship = "None"
+                    self.selectedPurpose = "None"
                     balance.getBalance()
                 }) {
                     Text("CONFIRM CASH OUT")

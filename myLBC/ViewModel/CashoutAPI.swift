@@ -18,12 +18,12 @@ class CashoutAPI: ObservableObject {
         userAccount = db.readUser(id: userCount)
     }
     
-    func cashout(amount: String, fee: String) {
+    func cashout(amount: String, fee: String, rel: String, relDesc: String, purpose: String, purposeDesc: String) {
         let userToken = userAccount[0].token
         
         guard let url = URL(string: "http://192.168.1.30:3000/lbcapi/ss/cashout") else { return }
         
-        let body: [String: String] = ["amount": amount, "fee": fee]
+        let body: [String: String] = ["amount": amount, "fee": fee, "rel": rel, "relDesc": relDesc, "purpose": purpose, "purposeDesc": purposeDesc]
         
         let finalBody = try? JSONSerialization.data(withJSONObject: body)
         

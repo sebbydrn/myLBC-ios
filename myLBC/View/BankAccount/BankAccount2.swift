@@ -26,7 +26,9 @@ struct BankAccount2: View {
     
     @State var selectedPurpose = 0
     
-    var purposes = ["None", "Charity / Aid Payment", "Education / School Fees", "Emergency Medical Aid"]
+    @State private var showSuccessAlert = false
+    
+    var purposes = ["None", "Charity / Aid Payment", "Education / School Fees", "Emergency Medical Aid", "Employee Payroll/Expense", "Family Support/ Living Expenses", "Gift", "Goods & Srvcs Payment/ Commercial Trxn", "Prize or Lottery Fees/ Taxes", "Rent/ Mortgage", "Savings/ Investments", "Travel Expenses"]
     
     var body: some View {
         
@@ -243,8 +245,46 @@ struct BankAccount2: View {
         .padding(.top, 15)
         
         VStack(alignment: .center) {
-            CustomButton(action: "", title: "CONFIRM")
-                .padding(.top, 10)
+            Button(action: {
+                RTATransferAPI().rtaTransfer(
+                    rtaBankCode: self.rtaBankCode,
+                    amount: self.amount,
+                    senderAcct: self.amount,
+                    rtaBankBranch: self.rtaBankBranch,
+                    rtaRcvrAcctNo: self.rtaRcvrAcctNo,
+                    rtaRcvrFirstName: self.firstName,
+                    rtaRcvrLastName: self.lastName,
+                    rtaAcctType: "",
+                    rtaMobile: self.contact,
+                    rtaStreet: "",
+                    fee: self.serviceFee,
+                    rtaRel: self.rtaRel,
+                    rtaRelDesc: self.rtaRel,
+                    rtaPurpose: String(self.selectedPurpose),
+                    rtaPurposeDesc: "",
+                    saveAcctFlag: "",
+                    completion: { res in
+                        if res == "Success" {
+                            self.showSuccessAlert.toggle()
+                        }
+                    })
+            }) {
+                Text("CONFIRM")
+                    .foregroundColor(Color.white)
+            }
+            .padding(.leading, 20)
+            .padding(.trailing, 20)
+            .padding(.top, 10)
+            .padding(.bottom, 10)
+            .background(Color("crimson"))
+            .cornerRadius(8)
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color("crimson"), lineWidth: 2)
+            )
+            .alert(isPresented: $showSuccessAlert, content: {
+                Alert(title: Text("MyLBC"), message: Text("Transaction has been processed"), dismissButton: .default(Text("OK")))
+            })
         }
         
     }

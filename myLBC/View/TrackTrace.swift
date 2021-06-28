@@ -78,7 +78,7 @@ struct TrackTrace: View {
             }
             
         }
-        .navigationTitle("Track & Trace")
+        .navigationTitle("Cargo Tracking")
         
         Spacer()
         

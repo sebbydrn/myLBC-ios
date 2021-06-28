@@ -272,7 +272,7 @@ struct MainView: View {
                                     Image("LBCLogo")
                                         .resizable()
                                         .frame(width: 85, height: 85)
-                                    Text("Track & Trace")
+                                    Text("Cargo Tracking")
                                         .foregroundColor(Color.black)
 
                                 }
